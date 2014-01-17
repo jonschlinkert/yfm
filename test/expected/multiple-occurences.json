@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "title": "Multiple occurrences",
+    "description": "This page has multiple occurrences of yaml front matter."
+  },
+  "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>{{titleize this.basename}}</title>\n  </head>\n  <body>\n    {{> body }}\n  </body>\n</html>\n~~~\ntitle: Default\ndescription: Home page\n~~~\n\n---\ntitle: Default\ndescription: Home page\n---\n\n---\ntitle: Default\ndescription: Home page\n---",
+  "original": "---\ntitle: Multiple occurrences\ndescription: This page has multiple occurrences of yaml front matter.\n---\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>{{titleize this.basename}}</title>\n  </head>\n  <body>\n    {{> body }}\n  </body>\n</html>\n~~~\ntitle: Default\ndescription: Home page\n~~~\n\n---\ntitle: Default\ndescription: Home page\n---\n\n---\ntitle: Default\ndescription: Home page\n---"
+}

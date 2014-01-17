@@ -1,0 +1,4 @@
+{
+  "content": "~~~\ntitle: Custom Delims\ndescription: This page has custom delimiters\n~~~\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>{{titleize this.basename}}</title>\n  </head>\n  <body>\n    {{> body }}\n  </body>\n</html>",
+  "original": "~~~\ntitle: Custom Delims\ndescription: This page has custom delimiters\n~~~\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>{{titleize this.basename}}</title>\n  </head>\n  <body>\n    {{> body }}\n  </body>\n</html>"
+}

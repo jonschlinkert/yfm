@@ -1,0 +1,4 @@
+{
+  "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>{{titleize this.basename}}</title>\n  </head>\n  <body>\n    {{> body }}\n  </body>\n</html>",
+  "original": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>{{titleize this.basename}}</title>\n  </head>\n  <body>\n    {{> body }}\n  </body>\n</html>"
+}

@@ -1,0 +1,1 @@
+{%= _.resolve("foo.md", "*templates") %}
