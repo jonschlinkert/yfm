@@ -20,7 +20,7 @@ var buildRegexGroup = function (re) {
 };
 
 // Read YAML front matter synchronously
-var readYFMSync = exports.readYFMSync = function (src, options) {
+module.exports = function (src, options) {
   var opts = _.extend({read: true, open: '---', close: '---'}, options);
   var metadata = {};
 
@@ -42,14 +42,8 @@ var readYFMSync = exports.readYFMSync = function (src, options) {
     content = fileObject[2];
   }
   return {
-    metadata: metadata,
+    context: metadata,
     content: content,
     original: src
   };
-};
-
-// Does the file have YAML front matter?
-var hasYFM = exports.hasYFM = function (src, options) {
-  var yfm = readYFMSync(src, options).metadata;
-  return _.keys(yfm).length > 0;
 };

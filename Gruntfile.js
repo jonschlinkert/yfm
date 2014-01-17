@@ -40,6 +40,10 @@ module.exports = function(grunt) {
     mochaTest: {
       options: {reporter: 'spec'},
       files: ['test/*.js']
+    },
+
+    clean: {
+      tests: ['test/actual/*.json']
     }
   });
 
