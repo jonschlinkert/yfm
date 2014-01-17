@@ -16,37 +16,7 @@ Example:
 }
 ```
 
-Checks for this:
-
-```
----
-title: Foo
----
-```
-
-this
-
-```
-~~~
-title: Foo
----
-```
-
-this
-
-```
----
-title: Foo
-...
-```
-
-and this
-
-```
-~~~
-title: Foo
-...
-```
+Checks for all patterns using these delimiters.
 
 _Passing multiple delimiters will likely provide unpredictable results, but the option is included for testing purposes._
 
