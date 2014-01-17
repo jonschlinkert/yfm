@@ -29,30 +29,34 @@ Example:
   open: ['...', '---']
 }
 ```
+
 Checks for this:
 
-```yaml
+```
 ---
 title: Foo
 ---
 ```
+
 this
 
-```yaml
+```
 ~~~
 title: Foo
 ---
 ```
+
 this
 
-```yaml
+```
 ---
 title: Foo
 ...
 ```
+
 and this
 
-```yaml
+```
 ~~~
 title: Foo
 ...
@@ -136,7 +140,7 @@ var hasYFM = function (src, options) {
 
 
 ## License
-Copyright (c) 2014 Jon Schlinkert, contributors.
+Copyright (c) 2014 Jon Schlinkert, Brian Woodward, contributors.
 Released under the MIT license
 
 ***

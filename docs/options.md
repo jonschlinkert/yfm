@@ -15,30 +15,34 @@ Example:
   open: ['...', '---']
 }
 ```
+
 Checks for this:
 
-```yaml
+```
 ---
 title: Foo
 ---
 ```
+
 this
 
-```yaml
+```
 ~~~
 title: Foo
 ---
 ```
+
 this
 
-```yaml
+```
 ---
 title: Foo
 ...
 ```
+
 and this
 
-```yaml
+```
 ~~~
 title: Foo
 ...
