@@ -1,7 +1,7 @@
 {
   "name": "yfm",
-  "description": "A YAML Front-Matter parsing and extraction Library.",
-  "version": "0.1.0",
+  "description": "A simple to use YAML Front-Matter parsing and extraction Library.",
+  "version": "0.2.0",
   "author": {
     "name": "Jon Schlinkert",
     "url": "https://github.com/jonschlinkert"
@@ -23,7 +23,8 @@
   "dependencies": {
     "js-yaml": "~3.0.1",
     "lodash": "~2.4.1",
-    "fs-utils": "~0.1.6"
+    "fs-utils": "~0.1.6",
+    "delims": "~0.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4.2",
@@ -39,6 +40,7 @@
   "keywords": [
     "front-matter",
     "front matter",
+    "frontmatter",
     "yaml front matter",
     "yfm",
     "yaml"

@@ -1,32 +1,26 @@
-You may pass an options object as a second parameter.
 
-### custom delimiters
+> All methods will accept an options object to be passed as a second paramer
+
+### delimiters
 Type: `object`
 
-Default: `{close: '---', open: '---'}`
+Default: `{delims: ['---', '---']}`
 
-Open and close delimiters can be a string or an array of strings. If an array of strings is passed for a delimiter then all patterns supplied will be used to check for YAML front matter.
+Open and close delimiters can be passed in as an array of strings. Example:
 
-Example:
+```js
+yfm.read('file.md', {delims: ['~~~', '~~~']});
+```
+
+You may also pass an array of arrays, allowing multiple alternate delimiters to be used. Example:
+
 
 ```js
 {
-  close: ['---', '~~~'],
-  open: ['...', '---']
+  delims: [
+    ['---', '~~~'], ['---', '~~~']
+  ]
 }
 ```
 
-Checks for all patterns using these delimiters.
-
-_Passing multiple delimiters will likely provide unpredictable results, but the option is included for testing purposes._
-
-### read
-Type: `boolean`
-
-Default: `true`
-
-Specify whether or not to read a file from the file system. When set to `false` a raw string may be passed to the function. Example:
-
-```js
-yfm('---\nTitle: YFM\n---\nContent.', {read: false})
-```
+_However, passing multiple delimiters will yield unpredictable results, so it is recommended that you use this option only for testing purposes._

@@ -8,42 +8,49 @@
 
 // node_modules
 var YAML = require('js-yaml');
+var delim = require('delims');
 var file = require('fs-utils');
 var _ = require('lodash');
 
 
-// Build RegExp patterns for delimiters
-var buildRegexGroup = function (re) {
-  re = !Array.isArray(re) ? [re] : _.compact(re);
-  re = (re.length > 0) ? re.join('|') : re;
-  return '(?:' + re + ')';
-};
-
-// Read YAML front matter synchronously
-module.exports = function (src, options) {
-  var opts = _.extend({read: true, open: '---', close: '---'}, options);
+// Parse the given string
+var yfm = function (src, delims) {
+  delims = delims || ['---','---'];
   var metadata = {};
 
-  // Content
-  src = opts.read ? file.readFileSync(src) : src;
+  // Store the original string
   var content = src;
 
-  // Construct RegExp based on delimiters
-  var open = buildRegexGroup(opts.open);
-  var yfm = '\\s([\\s\\S]+?)';
-  var close = buildRegexGroup(opts.close);
-  var body = '(\\s[\\s\\S]+|\\s?)$';
-  var re = new RegExp('^' + open + yfm + close + body);
+  // Use "delims" library to dynamically construct
+  // RegExp based on the given delimiters
+  var delimiters = delim(delims).evaluate;
 
   // File object
-  var fileObject = content.match(re);
+  var fileObject = content.match(delimiters);
+
   if (fileObject && fileObject.length === 3) {
     metadata = YAML.load(fileObject[1]);
     content = fileObject[2];
   }
+
   return {
     context: metadata,
     content: content,
     original: src
   };
 };
+
+
+// Read the file, then parse
+yfm.read = function(src, delims, options) {
+  return yfm(file.readFileSync(src, options), delims);
+};
+
+
+// Does YAML front matter exist?
+yfm.exists = function(src, delims, options) {
+  var obj = yfm.read(src, delims, options).context;
+  return _.keys(obj).length > 0;
+};
+
+module.exports = yfm;

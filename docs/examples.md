@@ -1,10 +1,10 @@
-### Extract front matter
 
 Let's say our page, `foo.html` contains
 
 ```html
 ---
 title: YAML Front matter
+description: This is a page
 ---
 <h1>{{title}}</h1>
 ```
@@ -19,7 +19,8 @@ returns
 ```json
 {
   "context": {
-    "title": "YAML Front matter"
+    "title": "YAML Front matter",
+    "description": "This is a page"
   },
   "content": "<h1>{{title}}</h1>",
   "original": "---\ntitle: YAML Front matter\n---\n<h1>{{title}}</h1>"
@@ -34,14 +35,5 @@ returns
 
 
 ```json
-{"title": "YAML Front matter"}
-```
-
-### Check for YAML front matter
-
-```js
-var hasYFM = function (src, options) {
-  var obj = yfm(src, options).context;
-  return _.keys(obj).length > 0;
-};
+{"title": "YAML Front matter", "description": "This is a page"}
 ```
